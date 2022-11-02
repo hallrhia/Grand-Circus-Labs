@@ -49,7 +49,7 @@ editSubmission(submissions, 1, 65);
 console.log(submissions);
 
 function findSubmissionsByName(array, name) {
-  let object = array.find((submission) => submission.name === name);
+  let object = array.find((array) => array.name === name);
   return object;
 }
 
