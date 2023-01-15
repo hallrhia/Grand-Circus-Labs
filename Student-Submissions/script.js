@@ -12,9 +12,7 @@ function addSubmission(array, newName, newScore, newDate) {
     date: newDate,
   };
 
-  newSubmission.score >= 60
-    ? (newSubmission.passed = true)
-    : (newSubmission.passed = false);
+  newSubmission.score >= 60 ? (newSubmission.passed = true) : (newSubmission.passed = false);
   array.push(newSubmission);
   console.log(array);
 }
@@ -90,3 +88,57 @@ function filter90AndAbove(array) {
 }
 
 console.log(filter90AndAbove(submissions));
+
+function createRange(start, end){
+  let newArray = [];
+  for(let i = start; i <= end; i++){
+    newArray.push(i);
+  }
+  return newArray;
+}
+console.log(createRange(2, 5));
+console.log(createRange(0, 6));
+console.log(createRange(4, 2));
+
+function countElementsForOfLoop(array) {
+  let count = {};
+
+  for (let element of array) {
+    if (count[element]) {
+      count[element] += 1;
+    } else {
+      count[element] = 1;
+    }
+  }
+    return count;
+}
+console.log(countElementsForOfLoop(["a", "b", "a", "c", "a", "b"]));
+console.log(countElementsForOfLoop(["a", "a", "a", "d", "d"]));
+
+function countElementsReduce(array) {
+  let count = array.reduce((accumulator, value) => {
+    accumulator[value] = ++accumulator[value] ||  1;
+    return accumulator;
+  }, {});
+  return count;
+}
+
+console.log(countElementsReduce(["a", "b", "a", "c", "a", "b"]));
+console.log(countElementsReduce(["a", "a", "a", "d", "d"]));
+
+function countElementsForEach(array){
+  let count = {};
+
+  array.forEach(element => {
+    if(count[element]) {
+      count[element] += 1;
+    }
+    else {
+      count[element] = 1;
+    }
+  });
+
+  return count;
+}
+console.log(countElementsForEach(["a", "b", "a", "c", "a", "b"]));
+console.log(countElementsForEach(["a", "a", "a", "d", "d"]));
