@@ -1,0 +1,35 @@
+form {
+    width: 400px;
+    padding: 1em;
+}
+
+ul {
+    list-style: none;
+}
+
+input {
+    margin: 8px;
+}
+
+button {
+    margin: 8px;
+    text-align: center;
+}
+
+/* div {
+    should be set to "size" input value with px unit
+    width: ;
+    height: ;
+    line-height: ;
+} */
+
+/* new div additional class of "circle" IF 
+"make it a circle" is checked
+ */
+
+.shape {
+    border: 5px solid red;
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+}
