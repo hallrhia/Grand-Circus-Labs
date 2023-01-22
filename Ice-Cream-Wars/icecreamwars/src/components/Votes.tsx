@@ -16,13 +16,18 @@ function Votes() {
         return (votes / totalVotes * 100).toFixed(1) + '%';
     }
   
-    
+    // function showBar() {
+        
+    // }
 
     return(
         <div className="Votes">
             <h2>Vote Here</h2>
             <div className="button-bar">
-                <button onClick={()=> setChocolateVotes(chocolateVotes + 1)}>Chocolate</button>
+                <button onClick={()=> {
+                    setChocolateVotes(chocolateVotes + 1);
+                    // showBar();
+                    }}>Chocolate</button>
                 <button onClick={() => setVanillaVotes(vanillaVotes + 1)}>Vanilla</button>
                 <button onClick={() => setStrawberryVotes(strawberryVotes + 1)}>Strawberry</button>
             </div>
@@ -32,10 +37,13 @@ function Votes() {
             </>
             :
             <>
+          {chocolateVotes > 0 ?
             <p>
                 <label>Chocolate</label> {chocolateVotes} ({calculatePercentage(chocolateVotes, getTotal())})
             </p>
             <progress className="progressChocolate" value={ chocolateVotes / getTotal()}></progress>
+        :  <div></div>
+        }
             <p>
                 <label>Vanilla</label> {vanillaVotes} ({calculatePercentage(vanillaVotes, getTotal())})
             </p>
