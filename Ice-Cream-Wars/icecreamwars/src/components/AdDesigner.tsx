@@ -10,9 +10,7 @@ function AdDesigner() {
   return (
     <div id="AdDesign">
       <h2>Ad Designer</h2>
-
       <Ad flavor={flavor} isLight={isLight} fontSize={fontSize} />
-
       <h3>What to Support</h3>
       <div className="button-bar">
         {flavor === "Chocolate" ? (
@@ -34,8 +32,10 @@ function AdDesigner() {
 
       <h3>Color Theme</h3>
       <div className="button-bar">
+   
         <button onClick={() => setIsLight(true)}>Light</button>
         <button onClick={() => setIsLight(false)}>Dark</button>
+    
       </div>
 
       <h3>Font Size</h3>
