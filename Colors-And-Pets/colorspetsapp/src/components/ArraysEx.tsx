@@ -13,12 +13,12 @@ function ArraysEx() {
   function addColor(color: string): void {
     setColors([...colors, color]);
   }
-  function removePet(id:number){
+  function removePet(id: number) {
     setPets(pets.filter((x) => x.id !== id));
   }
 
   return (
-    <div>
+    <div className="ArraysEx">
       <h1>Arrays Exercise</h1>
       <h2>Colors</h2>
       <ol>
@@ -37,15 +37,15 @@ function ArraysEx() {
           <th>Type</th>
           <th>Action</th>
         </tr>
-        {pets.map((pet, id) => {
-          return (
-            <tr key={id}>
-              <td>{pet.name}</td>
-              <td>{pet.type}</td>
-              <td><button onClick={() => removePet(pet.id)}>Delete</button></td>
-            </tr>
-          )
-        })}
+        {pets.map((pet, id) => (
+          <tr key={id}>
+            <td>{pet.name}</td>
+            <td>{pet.type}</td>
+            <td>
+              <button onClick={() => removePet(pet.id)}>Delete</button>
+            </td>
+          </tr>
+        ))}
       </table>
     </div>
   );
