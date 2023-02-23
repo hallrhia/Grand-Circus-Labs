@@ -1,0 +1,18 @@
+button {
+    background-color: #03a9f4;
+    color: white;
+    margin: 45px;
+}
+
+body {
+    text-align: center;
+}
+
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    background-color: #79c5e8;
+    border: 5px solid black;
+}
